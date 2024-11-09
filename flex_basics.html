@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        background-color: rgb(15, 15, 15);
+    }
+
+    #flex-container {
+        background-color: rgb(80,80,80);
+        height: 200px;
+
+        /* Aktivierung des Flex-Containers */
+        display: flex;
+        
+        /* Richtung der Hauptachse */
+        flex-direction: row;
+
+        /* Ausrichtung an der Hauptachse */
+        justify-content: flex-start;
+
+        /* Ausrichtung an der Querachse */
+        align-items: stretch;
+    }
+
+
+
+    #flex-container > div:nth-child(1) {
+        background-color: cyan;
+    }
+
+    #flex-container > div:nth-child(2) {
+        background-color: tomato;
+    }
+
+    #flex-container > div:nth-child(3) {
+        background-color: yellow;
+    }
+
+    #flex-container > div:nth-child(4) {
+        background-color: magenta;
+    }
+</style>
+<body>
+    <div id="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+</body>
+</html>

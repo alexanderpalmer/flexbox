@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        background-color: rgb(15, 15, 15);
+    }
+
+    #flex-container {
+        display: flex;
+        width: 400px;
+        /* Richtung der Hauptachse */
+        flex-direction: row;
+
+        background-color: rgb(80,80,80);
+        height: 200px;
+
+        /* Ausrichtung an der Hauptachse */
+        justify-content: flex-start;
+
+        /* Ausrichtung an der Querachse */
+        align-items: stretch;
+    }
+
+
+
+    #flex-container > div:nth-child(1) {
+        background-color: cyan;
+        flex-basis: 100px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        order: 1;     
+    }
+
+    #flex-container > div:nth-child(2) {
+        background-color: tomato;
+        flex-basis: 100px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        order: 2;
+    }
+
+    #flex-container > div:nth-child(3) {
+        background-color: yellow;
+        flex-basis:100px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        order: 3; 
+    }
+
+    #flex-container > div:nth-child(4) {
+        background-color: magenta;
+        flex-basis: 100px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        order: 4;
+    }
+</style>
+<body>
+    <div id="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+</body>
+</html>
