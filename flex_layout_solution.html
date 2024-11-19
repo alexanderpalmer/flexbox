@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsives Magazin Layout</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Allgemeine Stile */
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f4f4f4;
+      }
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        background-color: white;
+      }
+      a {
+        text-decoration: none;
+      }
+
+      /* Header */
+      .header {
+        background-color: #1abc9c;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      /* Navigation */
+      .nav {
+        background-color: #16a085;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 20px;
+        position: relative;
+      }
+      .nav a {
+        color: white;
+        margin: 0 10px;
+        padding: 5px;
+        transition: background-color ease-out 0.5s;
+      }
+
+      .nav a:hover {
+        background-color: #1abc9c;
+        transition: background-color linear 0.2s;
+      }
+
+      .nav .menu {
+        display: flex;
+        gap: 10px;
+      }
+      .nav .hamburger-label {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+      .nav .hamburger-label span {
+        display: block;
+        height: 3px;
+        width: 25px;
+        background-color: white;
+      }
+
+      /* Input-Steuerung */
+      #hamburger-toggle {
+        display: none;
+      }
+      #hamburger-toggle:checked ~ .menu {
+        display: flex;
+        flex-direction: column;
+        background-color: #16a085;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        gap: 0;
+      }
+      #hamburger-toggle:checked ~ .menu a {
+        padding: 10px 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      /* Hero */
+      .hero {
+        background-color: #f39c12;
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+        font-size: 1.5em;
+      }
+
+      /* Artikel */
+      .articles {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+        background-color: #ecf0f1;
+      }
+      .article {
+        flex: 1 1 calc(33.3333% - 15px); /* Drei Artikel nebeneinander bei großen Viewports */
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        line-height: 1.3em;
+        transition: transform ease-out 0.2s;
+      }
+
+      .article:hover {
+        transform: scale(102%);
+        transition: transform linear 0.2s;
+      }
+
+      /* Footer */
+      .footer {
+        background-color: #34495e;
+        color: white;
+        text-align: center;
+        padding: 10px;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1200px) {
+        .articles .article {
+          flex: 1 1 calc(50% - 10px); /* Zwei Artikel nebeneinander bei mittlerem Viewport */
+        }
+      }
+
+      @media (max-width: 768px) {
+        .articles .article {
+          flex: 1 1 100%; /* Ein Artikel pro Zeile bei schmalem Viewport */
+        }
+        .nav .menu {
+          display: none;
+        }
+        .nav .hamburger-label {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">Magazin Header</div>
+      <div class="nav">
+        <div class="logo">Logo</div>
+        <input type="checkbox" id="hamburger-toggle" />
+        <label for="hamburger-toggle" class="hamburger-label">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <div class="menu">
+          <a href="#">Home</a>
+          <a href="#">Kategorien</a>
+          <a href="#">Kontakt</a>
+        </div>
+      </div>
+      <div class="hero">
+        <h1>Hauptartikel</h1>
+        <p>Ein kurzer Einblick in das Thema des Hauptartikels.</p>
+      </div>
+      <div class="articles">
+        <div class="article">
+          <h3>Artikel 1</h3>
+          <p>
+            Aliqua Lorem minim incididunt cillum. Duis aliqua sunt cillum eu voluptate officia sint ullamco deserunt laboris aliqua minim aliquip non. Culpa
+            dolor eiusmod ullamco proident anim reprehenderit deserunt fugiat qui non. Reprehenderit ullamco ullamco magna amet laborum qui. Aliquip culpa
+            incididunt exercitation veniam velit ex minim cillum id non culpa non ut consequat. Ut duis laborum et officia proident duis elit anim ut in. culpa.
+          </p>
+        </div>
+        <div class="article">
+          <h3>Artikel 2</h3>
+          <p>
+            Voluptate occaecat duis reprehenderit consectetur incididunt. Aliqua Lorem minim incididunt cillum. Duis aliqua sunt cillum eu voluptate officia
+            sint ullamco deserunt laboris aliqua minim aliquip non. Culpa dolor eiusmod ullamco proident anim reprehenderit deserunt fugiat qui non.
+            Reprehenderit ullamco ullamco magna amet laborum qui. Aliquip culpa incididunt exercitation veniam velit ex minim cillum id non culpa non ut
+            consequat. Ut duis laborum et officia proident duis elit anim ut in. culpa.
+          </p>
+        </div>
+        <div class="article">
+          <h3>Artikel 3</h3>
+          <p>
+            Voluptate occaecat duis reprehenderit consectetur incididunt. Aliqua Lorem minim incididunt cillum. Duis aliqua sunt cillum eu voluptate officia
+            sint ullamco deserunt laboris aliqua minim aliquip non. Culpa dolor eiusmod ullamco proident anim reprehenderit deserunt fugiat qui non.
+            Reprehenderit ullamco ullamco magna amet laborum qui. Aliquip culpa incididunt exercitation veniam velit ex minim cillum id non culpa non ut
+            consequat. Ut duis laborum et officia proident duis elit anim ut in. culpa. Voluptate occaecat duis reprehenderit consectetur incididunt. Aliqua
+            Lorem minim incididunt cillum. Duis aliqua sunt cillum eu voluptate officia sint ullamco deserunt laboris aliqua minim aliquip non. Culpa dolor
+            eiusmod ullamco proident anim reprehenderit deserunt fugiat qui non. Reprehenderit ullamco ullamco magna amet laborum qui. Aliquip culpa incididunt
+            exercitation veniam velit ex minim cillum id non culpa non ut consequat. Ut duis laborum et officia proident duis elit anim ut in. culpa..
+          </p>
+        </div>
+        <div class="article">
+          <h3>Artikel 4</h3>
+          <p>
+            Voluptate occaecat duis reprehenderit consectetur incididunt. Aliqua Lorem minim incididunt cillum. Duis aliqua sunt cillum eu voluptate officia
+            sint ullamco deserunt laboris aliqua minim aliquip non. Culpa dolor eiusmod ullamco proident anim reprehenderit deserunt fugiat qui non.
+            Reprehenderit ullamco ullamco magna amet laborum qui.
+          </p>
+        </div>
+      </div>
+      <div class="footer">Footer</div>
+    </div>
+  </body>
+</html>

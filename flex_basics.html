@@ -1,59 +1,65 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flexbox Basics</title>
-</head>
-<style>
+  </head>
+  <style>
     * {
-        box-sizing: border-box;
+      box-sizing: border-box;
     }
     body {
-        background-color: rgb(15, 15, 15);
+      background-color: rgb(15, 15, 15);
     }
 
     #flex-container {
-        background-color: rgb(80,80,80);
-        height: 200px;
-
-        /* Aktivierung des Flex-Containers */
-        display: flex;
-
-        /* Richtung der Hauptachse */
-        flex-direction: row;
-
-        /* Ausrichtung an der Hauptachse */
-        justify-content: flex-start;
-
-        /* Ausrichtung an der Querachse */
-        align-items: stretch;
+      background-color: rgb(80, 80, 80);
+      height: 500px;
+      display: flex;
+      flex-direction: row;
+      width: 800px;
     }
 
-
+    #flex-container > div {
+      padding: 10px;
+      height: 100px;
+    }
 
     #flex-container > div:nth-child(1) {
-        background-color: cyan;
+      background-color: cyan;
+      flex-basis: 250px;
+      flex-grow: 2;
+      flex-shrink: 2;
     }
 
     #flex-container > div:nth-child(2) {
-        background-color: tomato;
+      background-color: tomato;
+      flex-basis: 250px;
+      flex-grow: 1;
+      flex-shrink: 1;
     }
 
     #flex-container > div:nth-child(3) {
-        background-color: yellow;
+      background-color: yellow;
+      flex-basis: 250px;
+      flex-grow: 1;
+      flex-shrink: 1;
     }
 
     #flex-container > div:nth-child(4) {
-        background-color: magenta;
+      background-color: magenta;
+      flex-basis: 250px;
+      flex-grow: 1;
+      flex-shrink: 1;
     }
-</style>
-<body>
+  </style>
+  <body>
     <div id="flex-container">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
     </div>
-</body>
+  </body>
 </html>
