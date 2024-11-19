@@ -10,148 +10,18 @@
       }
 
       /* Allgemeine Stile */
-      body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: #f4f4f4;
-      }
-      .container {
-        width: 100%;
-        max-width: 1200px;
-        background-color: white;
-      }
-      a {
-        text-decoration: none;
-      }
 
       /* Header */
-      .header {
-        background-color: #1abc9c;
-        color: white;
-        padding: 20px;
-        text-align: center;
-      }
 
       /* Navigation */
-      .nav {
-        background-color: #16a085;
-        color: white;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 5px 20px;
-        position: relative;
-      }
-      .nav a {
-        color: white;
-        margin: 0 10px;
-        padding: 5px;
-        transition: background-color ease-out 0.5s;
-      }
-
-      .nav a:hover {
-        background-color: #1abc9c;
-        transition: background-color linear 0.2s;
-      }
-
-      .nav .menu {
-        display: flex;
-        gap: 10px;
-      }
-      .nav .hamburger-label {
-        display: none;
-        flex-direction: column;
-        gap: 5px;
-        cursor: pointer;
-        padding-top: 5px;
-        padding-bottom: 5px;
-      }
-      .nav .hamburger-label span {
-        display: block;
-        height: 3px;
-        width: 25px;
-        background-color: white;
-      }
-
-      /* Input-Steuerung */
-      #hamburger-toggle {
-        display: none;
-      }
-      #hamburger-toggle:checked ~ .menu {
-        display: flex;
-        flex-direction: column;
-        background-color: #16a085;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        gap: 0;
-      }
-      #hamburger-toggle:checked ~ .menu a {
-        padding: 10px 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.3);
-      }
 
       /* Hero */
-      .hero {
-        background-color: #f39c12;
-        color: white;
-        padding: 40px 20px;
-        text-align: center;
-        font-size: 1.5em;
-      }
 
       /* Artikel */
-      .articles {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        padding: 20px;
-        background-color: #ecf0f1;
-      }
-      .article {
-        flex: 1 1 calc(33.3333% - 15px); /* Drei Artikel nebeneinander bei großen Viewports */
-        background-color: white;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        line-height: 1.3em;
-        transition: transform ease-out 0.2s;
-      }
-
-      .article:hover {
-        transform: scale(102%);
-        transition: transform linear 0.2s;
-      }
 
       /* Footer */
-      .footer {
-        background-color: #34495e;
-        color: white;
-        text-align: center;
-        padding: 10px;
-      }
 
       /* Responsive Design */
-      @media (max-width: 1200px) {
-        .articles .article {
-          flex: 1 1 calc(50% - 10px); /* Zwei Artikel nebeneinander bei mittlerem Viewport */
-        }
-      }
-
-      @media (max-width: 768px) {
-        .articles .article {
-          flex: 1 1 100%; /* Ein Artikel pro Zeile bei schmalem Viewport */
-        }
-        .nav .menu {
-          display: none;
-        }
-        .nav .hamburger-label {
-          display: flex;
-        }
-      }
     </style>
   </head>
   <body>
